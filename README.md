@@ -101,7 +101,7 @@
                 <div class="brand">
                     <div class="logo">Mr</div>
                     <div>
-                        <div class="brand-title">Mr Steve Consultoria</div>
+                        <div class="brand-title">Steve Consultoria</div>
                         <div class="brand-sub">• Espiritual • Traduções • Aconselhamento</div>
                     </div>
                 </div>
