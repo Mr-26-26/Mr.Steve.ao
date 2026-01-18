@@ -1,0 +1,170 @@
+
+        :root{
+            --bg:#0f172a;
+            --card:#0b1220;
+            --muted:#9aa4b2;
+            --accent:#7c3aed;
+            --glass: rgba(255,255,255,0.04);
+            --positive:#10b981;
+            --danger:#ef4444;
+        }
+        *{box-sizing:border-box}
+        body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.45;margin:0;background:linear-gradient(180deg,#071126 0%, #061428 55%, #08162b 100%);color:#e6eef8;min-height:100vh}
+        header{backdrop-filter:blur(6px);position:sticky;top:0;z-index:20;border-bottom:1px solid rgba(255,255,255,0.04);padding:14px 0}
+        .container{max-width:980px;margin:0 auto;padding:0 20px}
+        nav{display:flex;gap:16px;align-items:center;justify-content:space-between}
+        .brand{display:flex;align-items:center;gap:12px}
+        .logo{
+            width:56px;height:56px;border-radius:12px;display:inline-grid;place-items:center;
+            background:linear-gradient(135deg,var(--accent),#06b6d4);font-weight:800;color:white;font-size:18px;
+            box-shadow:0 6px 20px rgba(124,58,237,0.18);
+        }
+        .brand-title{font-weight:700;font-size:1.1rem}
+        .brand-sub{font-size:.85rem;color:var(--muted)}
+        .navlinks{display:flex;gap:12px;align-items:center}
+        .navlinks a{color:rgba(255,255,255,0.9);text-decoration:none;padding:8px 10px;border-radius:8px;transition:all .15s}
+        .navlinks a:hover{background:var(--glass);transform:translateY(-2px)}
+        main{padding:28px 0}
+        .grid{display:grid;grid-template-columns:1fr;gap:18px}
+        @media(min-width:920px){.grid{grid-template-columns:2fr 1fr}}
+        .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:22px;box-shadow:0 10px 30px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+        h1,h2{margin:0 0 10px 0;color:#f8fafc}
+        p{color:var(--muted);margin:0 0 12px 0}
+        .hero{display:flex;gap:18px;align-items:center}
+        .hero-left{flex:1}
+        .hero-cta{display:flex;gap:12px;margin-top:12px}
+        .btn{display:inline-block;background:var(--accent);color:#fff;padding:10px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:600;box-shadow:0 8px 30px rgba(124,58,237,0.18)}
+        .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:#dbeafe}
+        .muted{font-size:.95rem;color:var(--muted)}
+        .services{display:grid;gap:12px;margin-top:10px}
+        .service{padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
+        label{display:block;font-size:.95rem;margin:8px 0 6px}
+        input[type="text"],input[type="email"],select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#e6eef8}
+        textarea{min-height:120px;resize:vertical}
+        .small-note{font-size:.85rem;color:var(--muted);margin-top:8px}
+        .age-consent{background:linear-gradient(90deg,#fff3cd,#fffbe6);padding:10px;border-radius:8px;color:#6a4e00;border:1px solid #ffecd1}
+        footer{padding:20px 0;color:var(--muted);font-size:.9rem;text-align:center}
+        .socials{display:flex;gap:10px;align-items:center}
+        .socials a{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,0.03);color:#fff;text-decoration:none}
+        .note-pill{display:inline-block;background:#07142a;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,0.03);font-size:.85rem}
+        table.preco{width:100%;border-collapse:collapse;margin-top:10px;background:rgba(255,255,255,0.02);border-radius:8px;overflow:hidden}
+        table.preco th, table.preco td{padding:10px;border-bottom:1px solid rgba(255,255,255,0.03);text-align:left;color:#e6eef8}
+        table.preco th{background:rgba(0,0,0,0.06);font-weight:600}
+
+        /* BIO e SLIDESHOW */
+        .bio-section{display:grid;gap:12px}
+        .bio-content{display:flex;flex-direction:column;gap:8px}
+        .bio-content p{max-width:72ch}
+        .slideshow{
+            position:relative;
+            width:100%;
+            height:320px;
+            border-radius:12px;
+            overflow:hidden;
+            background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.04));
+            border:1px solid rgba(255,255,255,0.03);
+        }
+        .slide{
+            position:absolute;
+            inset:0;
+            opacity:0;
+            transition:opacity .8s ease;
+            display:grid;
+            place-items:center;
+        }
+        .slide img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            display:block;
+        }
+        .slide.active{opacity:1}
+        .slideshow-dots{position:absolute;left:50%;transform:translateX(-50%);bottom:10px;display:flex;gap:8px}
+        .dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);cursor:pointer;border:1px solid rgba(0,0,0,0.2)}
+        .dot.active{background:var(--accent);box-shadow:0 6px 18px rgba(124,58,237,0.18)}
+        @media(max-width:600px){.logo{width:48px;height:48px;font-size:16px}.brand-title{font-size:.98rem}.slideshow{height:220px}}
+
+                /* Carousel inside #slideshow: 8 images, 4 visible at once, equal size */
+                #slideshow .carousel{
+                    width:100%;
+                    height:100%;
+                    overflow:hidden;
+                    border-radius:12px;
+                    display:block;
+                }
+                #slideshow .carousel-track{
+                    display:flex;
+                    width:200%; /* 8 items * 25% each = 200% */
+                    height:100%;
+                    transition:transform .8s ease;
+                    will-change:transform;
+                }
+                #slideshow .carousel-item{
+                    flex:0 0 25%; /* four items per view */
+                    padding:6px;
+                    box-sizing:border-box;
+                    height:100%;
+                }
+                #slideshow .carousel-item img{
+                    width:100%;
+                    height: 150%;
+                    object-fit:cover;
+                    display:block;
+                    border-radius:8px;
+                    border:1px solid rgba(255,255,255,0.03);
+                }
+
+                /* responsive: show 2 per view on narrow screens */
+                @media(max-width:700px){
+                    #slideshow .carousel-track{ width:400%; } /* 8 items * 50% each = 400% */
+                    #slideshow .carousel-item{ flex:0 0 50%; }
+                }
+                /* responsive: show 1 per view on very narrow screens */
+                @media(max-width:400px){
+                    #slideshow .carousel-track{ width:800%; } /* 8 items * 100% each = 800% */
+                    #slideshow .carousel-item{ flex:0 0 100%; }
+                }
+        /* Botão de Chamada Telefónica Fixa no Rodapé */
+                  .tel {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .botao-ligar {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #28a745; /* Cor verde para chamar */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+        }
+        .botao-ligar:hover {
+            background-color: #218838;
+        }
+         /* responsive: ajustar tamanho do botão em telas pequenas */
+        @media (max-width: 600px) {
+            .botao-ligar {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+        }
+         /* responsive: ajustar o tamanho do rodapé em telas pequenas */
+
+        @media (max-width: 600px) {
+            .tel {
+                height: 40px;
+            } 
+        }
+         /* responsive: ajustar o site em telas pequenas */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+        } 
+        
